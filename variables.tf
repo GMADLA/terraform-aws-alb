@@ -167,6 +167,12 @@ variable "access_logs_region" {
   description = "The region for the access_logs S3 bucket"
 }
 
+variable "access_logs_bucket_name" {
+  type        = "string"
+  default     = ""
+  description = "The bucket for the access_logs S3 bucket, (not recommended, legacy support only)"
+}
+
 variable "cross_zone_load_balancing_enabled" {
   type        = "string"
   default     = "true"
