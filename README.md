@@ -10,7 +10,7 @@ Terraform module to create an ALB, default ALB listener(s), and a default ALB ta
 
 ---
 
-This project is part of our comprehensive ["SweetOps"](https://docs.cloudposse.com) approach towards DevOps. 
+This project is part of our comprehensive ["SweetOps"](https://docs.cloudposse.com) approach towards DevOps.
 
 
 It's 100% Open Source and licensed under the [APACHE2](LICENSE).
@@ -86,6 +86,13 @@ Available targets:
 | https_ingress_cidr_blocks | List of CIDR blocks to allow in HTTPS security group | list | `<list>` | no |
 | https_ingress_prefix_list_ids | List of prefix list IDs for allowing access to HTTPS ingress security group | list | `<list>` | no |
 | https_port | The port for the HTTPS listener | string | `443` | no |
+| blue_green_enabled | A boolean flag to enable/disable BLUE/Green target groups and production/test listeners | string | `false` | no |
+| prod_ingress_cidr_blocks | List of CIDR blocks to allow in production security group | list | `<list>` | no |
+| prod_ingress_prefix_list_ids | List of prefix list IDs for allowing access to production ingress security group | list | `<list>` | no |
+| prod_port | The port for the production listener | string | `80` | no |
+| test_ingress_cidr_blocks | List of CIDR blocks to allow in test security group | list | `<list>` | no |
+| test_ingress_prefix_list_ids | List of prefix list IDs for allowing access to test ingress security group | list | `<list>` | no |
+| test_port | The port for the test listener | string | `8080` | no |
 | idle_timeout | The time in seconds that the connection is allowed to be idle | string | `60` | no |
 | internal | A boolean flag to determine whether the ALB should be internal | string | `false` | no |
 | ip_address_type | The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`. | string | `ipv4` | no |
@@ -110,6 +117,8 @@ Available targets:
 | default_target_group_arn | The default target group ARN |
 | http_listener_arn | The ARN of the HTTP listener |
 | https_listener_arn | The ARN of the HTTPS listener |
+| prod_listener_arn | The ARN of the production listener in Blue/Green |
+| test_listener_arn | The ARN of the test listener in Blue/Green|
 | listener_arns | A list of all the listener ARNs |
 | security_group_id | The security group ID of the ALB |
 
@@ -132,9 +141,9 @@ File a GitHub [issue](https://github.com/cloudposse/terraform-aws-alb/issues), s
 
 ## Commercial Support
 
-Work directly with our team of DevOps experts via email, slack, and video conferencing. 
+Work directly with our team of DevOps experts via email, slack, and video conferencing.
 
-We provide [*commercial support*][commercial_support] for all of our [Open Source][github] projects. As a *Dedicated Support* customer, you have access to our team of subject matter experts at a fraction of the cost of a full-time engineer. 
+We provide [*commercial support*][commercial_support] for all of our [Open Source][github] projects. As a *Dedicated Support* customer, you have access to our team of subject matter experts at a fraction of the cost of a full-time engineer.
 
 [![E-Mail](https://img.shields.io/badge/email-hello@cloudposse.com-blue.svg)](mailto:hello@cloudposse.com)
 
@@ -144,7 +153,7 @@ We provide [*commercial support*][commercial_support] for all of our [Open Sourc
 - **Bug Fixes.** We'll rapidly work to fix any bugs in our projects.
 - **Build New Terraform Modules.** We'll develop original modules to provision infrastructure.
 - **Cloud Architecture.** We'll assist with your cloud strategy and design.
-- **Implementation.** We'll provide hands-on support to implement our reference architectures. 
+- **Implementation.** We'll provide hands-on support to implement our reference architectures.
 
 
 ## Community Forum
@@ -178,9 +187,9 @@ Copyright © 2017-2018 [Cloud Posse, LLC](https://cloudposse.com)
 
 
 
-## License 
+## License
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 See [LICENSE](LICENSE) for full details.
 
@@ -221,7 +230,7 @@ This project is maintained and funded by [Cloud Posse, LLC][website]. Like it? P
 
 We're a [DevOps Professional Services][hire] company based in Los Angeles, CA. We love [Open Source Software](https://github.com/cloudposse/)!
 
-We offer paid support on all of our projects.  
+We offer paid support on all of our projects.
 
 Check out [our other projects][github], [apply for a job][jobs], or [hire us][hire] to help with your cloud strategy and implementation.
 

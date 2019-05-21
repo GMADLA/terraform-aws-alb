@@ -27,6 +27,13 @@
 | https_ingress_cidr_blocks | List of CIDR blocks to allow in HTTPS security group | list | `<list>` | no |
 | https_ingress_prefix_list_ids | List of prefix list IDs for allowing access to HTTPS ingress security group | list | `<list>` | no |
 | https_port | The port for the HTTPS listener | string | `443` | no |
+| blue_green_enabled | A boolean flag to enable/disable Blue/Green listeners | string | `false` | no |
+| prod_ingress_cidr_blocks | List of CIDR blocks to allow in production security group | list | `<list>` | no |
+| prod_ingress_prefix_list_ids | List of prefix list IDs for allowing access to production ingress security group | list | `<list>` | no |
+| prod_port | The port for the production listener | string | `80` | no |
+| test_ingress_cidr_blocks | List of CIDR blocks to allow in test security group | list | `<list>` | no |
+| test_ingress_prefix_list_ids | List of prefix list IDs for allowing access to test ingress security group | list | `<list>` | no |
+| test_port | The port for the test listener | string | `8080` | no |
 | idle_timeout | The time in seconds that the connection is allowed to be idle | string | `60` | no |
 | internal | A boolean flag to determine whether the ALB should be internal | string | `false` | no |
 | ip_address_type | The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`. | string | `ipv4` | no |
