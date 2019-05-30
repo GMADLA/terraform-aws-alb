@@ -69,7 +69,7 @@ resource "aws_security_group_rule" "test_ingress" {
 }
 
 module "access_logs" {
-  source        = "git::https://github.com/GMADLA/terraform-aws-lb-s3-bucket.git?ref=tags/0.1.0"
+  source        = "git::https://github.com/GMADLA/terraform-aws-lb-s3-bucket.git?ref=tags/0.1.5-dev.1"
   attributes    = "${var.attributes}"
   delimiter     = "${var.delimiter}"
   name          = "${var.name}"
