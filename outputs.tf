@@ -33,6 +33,16 @@ output "default_target_group_arn" {
   value       = "${aws_lb_target_group.default.arn}"
 }
 
+output "blue_target_group_arn" {
+  description = "The blue target group ARN for Blue/Green"
+  value       = "${aws_lb_target_group.blue.arn}"
+}
+
+output "green_target_group_arn" {
+  description = "The green target group ARN for Blue/Green"
+  value       = "${aws_lb_target_group.green.arn}"
+}
+
 output "http_listener_arn" {
   description = "The ARN of the HTTP listener"
   value       = "${join("", aws_lb_listener.http.*.arn)}"
@@ -41,6 +51,16 @@ output "http_listener_arn" {
 output "https_listener_arn" {
   description = "The ARN of the HTTPS listener"
   value       = "${join("", aws_lb_listener.https.*.arn)}"
+}
+
+output "prod_listener_arn" {
+  description = "The ARN of the production listener for Blue/Green"
+  value       = "${join("", aws_lb_listener.prod.*.arn)}"
+}
+
+output "test_listener_arn" {
+  description = "The ARN of the test listener for Blue/Green"
+  value       = "${join("", aws_lb_listener.test.*.arn)}"
 }
 
 output "listener_arns" {

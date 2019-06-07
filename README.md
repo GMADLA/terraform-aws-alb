@@ -116,6 +116,8 @@ Available targets:
 | alb_name | The ARN suffix of the ALB |
 | alb_zone_id | The ID of the zone which ALB is provisioned |
 | default_target_group_arn | The default target group ARN |
+| blue_target_group_arn | The blue target group ARN for Blue/Green |
+| green_target_group_arn | The green target group ARN for Blue/Green |
 | http_listener_arn | The ARN of the HTTP listener |
 | https_listener_arn | The ARN of the HTTPS listener |
 | prod_listener_arn | The ARN of the production listener in Blue/Green |
