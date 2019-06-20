@@ -33,16 +33,6 @@ output "default_target_group_arn" {
   value       = "${aws_lb_target_group.default.arn}"
 }
 
-output "blue_target_group_arn" {
-  description = "The blue target group ARN for Blue/Green"
-  value       = "${join("", aws_lb_target_group.blue.*.arn)}"
-}
-
-output "green_target_group_arn" {
-  description = "The green target group ARN for Blue/Green"
-  value       = "${join("", aws_lb_target_group.green.*.arn)}"
-}
-
 output "http_listener_arn" {
   description = "The ARN of the HTTP listener"
   value       = "${join("", aws_lb_listener.http.*.arn)}"
