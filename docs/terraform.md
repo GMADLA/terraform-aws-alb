@@ -59,6 +59,8 @@
 | default_target_group_arn | The default target group ARN |
 | http_listener_arn | The ARN of the HTTP listener |
 | https_listener_arn | The ARN of the HTTPS listener |
+| prod_listener_arn | The ARN of the production listener in Blue/Green |
+| test_listener_arn | The ARN of the test listener in Blue/Green |
 | listener_arns | A list of all the listener ARNs |
 | security_group_id | The security group ID of the ALB |
 
