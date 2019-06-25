@@ -6,6 +6,7 @@
 | access_logs_enabled | A boolean flag to enable/disable access_logs | string | `true` | no |
 | access_logs_prefix | The S3 bucket prefix | string | `` | no |
 | access_logs_region | The region for the access_logs S3 bucket | string | `us-east-1` | no |
+| access_logs_bucket_name | Bucket name (not recommended, legacy support only.) | string | `` | no |
 | attributes | Additional attributes, e.g. `1` | list | `<list>` | no |
 | certificate_arn | The ARN of the default SSL certificate for HTTPS listener | string | `` | no |
 | cross_zone_load_balancing_enabled | A boolean flag to enable/disable cross zone load balancing | string | `true` | no |
@@ -27,6 +28,13 @@
 | https_ingress_cidr_blocks | List of CIDR blocks to allow in HTTPS security group | list | `<list>` | no |
 | https_ingress_prefix_list_ids | List of prefix list IDs for allowing access to HTTPS ingress security group | list | `<list>` | no |
 | https_port | The port for the HTTPS listener | string | `443` | no |
+| blue_green_enabled | A boolean flag to enable/disable Blue/Green listeners | string | `false` | no |
+| prod_ingress_cidr_blocks | List of CIDR blocks to allow in production security group | list | `<list>` | no |
+| prod_ingress_prefix_list_ids | List of prefix list IDs for allowing access to production ingress security group | list | `<list>` | no |
+| prod_port | The port for the production listener | string | `80` | no |
+| test_ingress_cidr_blocks | List of CIDR blocks to allow in test security group | list | `<list>` | no |
+| test_ingress_prefix_list_ids | List of prefix list IDs for allowing access to test ingress security group | list | `<list>` | no |
+| test_port | The port for the test listener | string | `8080` | no |
 | idle_timeout | The time in seconds that the connection is allowed to be idle | string | `60` | no |
 | internal | A boolean flag to determine whether the ALB should be internal | string | `false` | no |
 | ip_address_type | The type of IP addresses used by the subnets for your load balancer. The possible values are `ipv4` and `dualstack`. | string | `ipv4` | no |
@@ -51,6 +59,8 @@
 | default_target_group_arn | The default target group ARN |
 | http_listener_arn | The ARN of the HTTP listener |
 | https_listener_arn | The ARN of the HTTPS listener |
+| prod_listener_arn | The ARN of the production listener in Blue/Green |
+| test_listener_arn | The ARN of the test listener in Blue/Green |
 | listener_arns | A list of all the listener ARNs |
 | security_group_id | The security group ID of the ALB |
 
