@@ -107,28 +107,10 @@ variable "https_ingress_prefix_list_ids" {
   description = "List of prefix list IDs for allowing access to HTTPS ingress security group"
 }
 
-variable "prod_port" {
-  type        = "string"
-  default     = "80"
-  description = "The port for the production listener"
-}
-
-variable "blue_green_enabled" {
+variable "test_enabled" {
   type        = "string"
   default     = "false"
   description = "A boolean flag to create Blue/Green target groups and production/test listeners"
-}
-
-variable "prod_ingress_cidr_blocks" {
-  type        = "list"
-  default     = ["0.0.0.0/0"]
-  description = "List of CIDR blocks to allow in production security group"
-}
-
-variable "prod_ingress_prefix_list_ids" {
-  type        = "list"
-  default     = []
-  description = "List of prefix list IDs for allowing access to production ingress security group"
 }
 
 variable "test_port" {

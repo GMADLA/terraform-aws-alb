@@ -43,11 +43,6 @@ output "https_listener_arn" {
   value       = "${join("", aws_lb_listener.https.*.arn)}"
 }
 
-output "prod_listener_arn" {
-  description = "The ARN of the production listener for Blue/Green"
-  value       = "${join("", aws_lb_listener.prod.*.arn)}"
-}
-
 output "test_listener_arn" {
   description = "The ARN of the test listener for Blue/Green"
   value       = "${join("", aws_lb_listener.test.*.arn)}"
