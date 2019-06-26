@@ -28,10 +28,7 @@
 | https_ingress_cidr_blocks | List of CIDR blocks to allow in HTTPS security group | list | `<list>` | no |
 | https_ingress_prefix_list_ids | List of prefix list IDs for allowing access to HTTPS ingress security group | list | `<list>` | no |
 | https_port | The port for the HTTPS listener | string | `443` | no |
-| blue_green_enabled | A boolean flag to enable/disable Blue/Green listeners | string | `false` | no |
-| prod_ingress_cidr_blocks | List of CIDR blocks to allow in production security group | list | `<list>` | no |
-| prod_ingress_prefix_list_ids | List of prefix list IDs for allowing access to production ingress security group | list | `<list>` | no |
-| prod_port | The port for the production listener | string | `80` | no |
+| test_enabled | A boolean flag to enable/disable Blue/Green listeners | string | `false` | no |
 | test_ingress_cidr_blocks | List of CIDR blocks to allow in test security group | list | `<list>` | no |
 | test_ingress_prefix_list_ids | List of prefix list IDs for allowing access to test ingress security group | list | `<list>` | no |
 | test_port | The port for the test listener | string | `8080` | no |
@@ -59,7 +56,6 @@
 | default_target_group_arn | The default target group ARN |
 | http_listener_arn | The ARN of the HTTP listener |
 | https_listener_arn | The ARN of the HTTPS listener |
-| prod_listener_arn | The ARN of the production listener in Blue/Green |
 | test_listener_arn | The ARN of the test listener in Blue/Green |
 | listener_arns | A list of all the listener ARNs |
 | security_group_id | The security group ID of the ALB |
