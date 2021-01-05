@@ -13,7 +13,7 @@ jobs:
         with:
           token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: cloudposse/actions
+          repository: GMADLA/actions
           commands: rebuild-readme, terraform-fmt
           permission: triage
           issue-type: pull-request
@@ -28,7 +28,7 @@ jobs:
         with:
           token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
           reaction-token: ${{ secrets.GITHUB_TOKEN }}
-          repository: cloudposse/actions
+          repository: GMADLA/actions
           commands: test
           permission: triage
           issue-type: pull-request
