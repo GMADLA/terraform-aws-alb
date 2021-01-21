@@ -98,6 +98,18 @@ variable "access_logs_enabled" {
   description = "A boolean flag to enable/disable access_logs"
 }
 
+variable "access_logs_create" {
+  type        = bool
+  default     = true
+  description = "A boolean flag to create access logs bucket"
+}
+
+variable "access_logs_bucket_id" {
+  type        = string
+  default     = ""
+  description = "The name of an existing bucket to use for access logs"
+}
+
 variable "cross_zone_load_balancing_enabled" {
   type        = bool
   default     = true

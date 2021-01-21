@@ -78,7 +78,7 @@ resource "aws_lb" "default" {
   enable_deletion_protection       = var.deletion_protection_enabled
 
   access_logs {
-    bucket  = module.access_logs.bucket_id
+    bucket  = var.access_logs_create ? module.access_logs.bucket_id : var.access_logs_bucket_id
     prefix  = var.access_logs_prefix
     enabled = var.access_logs_enabled
   }

@@ -185,6 +185,8 @@ Available targets:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| access\_logs\_bucket\_id | The name of an existing bucket to use for access logs | `string` | `""` | no |
+| access\_logs\_create | A boolean flag to create access logs bucket | `bool` | `true` | no |
 | access\_logs\_enabled | A boolean flag to enable/disable access\_logs | `bool` | `true` | no |
 | access\_logs\_prefix | The S3 log bucket prefix | `string` | `""` | no |
 | additional\_certs | A list of additonal certs to add to the https listerner | `list(string)` | `[]` | no |
