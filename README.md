@@ -24,6 +24,25 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 
 
 
+## Security & Compliance [<img src="https://cloudposse.com/wp-content/uploads/2020/11/bridgecrew.svg" width="250" align="right" />](https://bridgecrew.io/)
+
+Security scanning is graciously provided by Bridgecrew. Bridgecrew is the leading fully hosted, cloud-native solution providing continuous Terraform security and compliance.
+
+| Benchmark | Description |
+|--------|---------------|
+| [![Infrastructure Security](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=INFRASTRUCTURE+SECURITY) | Infrastructure Security Compliance |
+| [![CIS KUBERNETES](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/cis_kubernetes)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=CIS+KUBERNETES+V1.5) | Center for Internet Security, KUBERNETES Compliance |
+| [![CIS AWS](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=CIS+AWS+V1.2) | Center for Internet Security, AWS Compliance |
+| [![CIS AZURE](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/cis_azure)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=CIS+AZURE+V1.1) | Center for Internet Security, AZURE Compliance |
+| [![PCI-DSS](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/pci)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=PCI-DSS+V3.2) | Payment Card Industry Data Security Standards Compliance |
+| [![NIST-800-53](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/nist)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=NIST-800-53) | National Institute of Standards and Technology Compliance |
+| [![ISO27001](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/iso)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=ISO27001) | Information Security Management System, ISO/IEC 27001 Compliance |
+| [![SOC2](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/soc2)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=SOC2)| Service Organization Control 2 Compliance |
+| [![CIS GCP](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/cis_gcp)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=CIS+GCP+V1.1) | Center for Internet Security, GCP Compliance |
+| [![HIPAA](https://www.bridgecrew.cloud/badges/github/cloudposse/terraform-aws-alb/hipaa)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=cloudposse%2Fterraform-aws-alb&benchmark=HIPAA) | Health Insurance Portability and Accountability Compliance |
+
+
+
 ## Usage
 
 Include this module in your existing terraform code:
@@ -57,6 +76,25 @@ Available targets:
   lint                                Lint terraform code
 
 ```
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| access_logs | cloudposse/lb-s3-bucket/aws | 0.10.0 |
+| default_target_group_label | cloudposse/label/null | 0.22.1 |
+| this | cloudposse/label/null | 0.22.1 |
+
+## Resources
+
+| Name |
+|------|
+| [aws_lb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb) |
+| [aws_lb_listener](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener) |
+| [aws_lb_listener_certificate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_certificate) |
+| [aws_lb_target_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group) |
+| [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
+| [aws_security_group_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) |
 
 ## Inputs
 
@@ -106,18 +144,21 @@ Available targets:
 
 | Name | Description |
 |------|-------------|
-| access_logs_bucket_id | The S3 bucket ID for access logs |
-| alb_arn | The ARN of the ALB |
-| alb_arn_suffix | The ARN suffix of the ALB |
-| alb_dns_name | DNS name of ALB |
-| alb_name | The ARN suffix of the ALB |
-| alb_zone_id | The ID of the zone which ALB is provisioned |
-| default_target_group_arn | The default target group ARN |
-| http_listener_arn | The ARN of the HTTP listener |
-| https_listener_arn | The ARN of the HTTPS listener |
-| test_listener_arn | The ARN of the test listener in Blue/Green |
-| listener_arns | A list of all the listener ARNs |
-| security_group_id | The security group ID of the ALB |
+| access\_logs\_bucket\_id | The S3 bucket ID for access logs |
+| alb\_arn | The ARN of the ALB |
+| alb\_arn\_suffix | The ARN suffix of the ALB |
+| alb\_dns\_name | DNS name of ALB |
+| alb\_name | The ARN suffix of the ALB |
+| alb\_zone\_id | The ID of the zone which ALB is provisioned |
+| default\_target\_group\_arn | The default target group ARN |
+| http\_listener\_arn | The ARN of the HTTP forwarding listener |
+| http\_redirect\_listener\_arn | The ARN of the HTTP to HTTPS redirect listener |
+| https\_listener\_arn | The ARN of the HTTPS listener |
+| listener\_arns | A list of all the listener ARNs |
+| security\_group\_id | The security group ID of the ALB |
+<!-- markdownlint-restore -->
+
+
 
 
 

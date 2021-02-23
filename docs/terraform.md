@@ -1,4 +1,23 @@
 
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| access_logs | cloudposse/lb-s3-bucket/aws | 0.10.0 |
+| default_target_group_label | cloudposse/label/null | 0.22.1 |
+| this | cloudposse/label/null | 0.22.1 |
+
+## Resources
+
+| Name |
+|------|
+| [aws_lb](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb) |
+| [aws_lb_listener](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener) |
+| [aws_lb_listener_certificate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_certificate) |
+| [aws_lb_target_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_target_group) |
+| [aws_security_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) |
+| [aws_security_group_rule](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -47,16 +66,16 @@
 
 | Name | Description |
 |------|-------------|
-| access_logs_bucket_id | The S3 bucket ID for access logs |
-| alb_arn | The ARN of the ALB |
-| alb_arn_suffix | The ARN suffix of the ALB |
-| alb_dns_name | DNS name of ALB |
-| alb_name | The ARN suffix of the ALB |
-| alb_zone_id | The ID of the zone which ALB is provisioned |
-| default_target_group_arn | The default target group ARN |
-| http_listener_arn | The ARN of the HTTP listener |
-| https_listener_arn | The ARN of the HTTPS listener |
-| test_listener_arn | The ARN of the test listener in Blue/Green |
-| listener_arns | A list of all the listener ARNs |
-| security_group_id | The security group ID of the ALB |
-
+| access\_logs\_bucket\_id | The S3 bucket ID for access logs |
+| alb\_arn | The ARN of the ALB |
+| alb\_arn\_suffix | The ARN suffix of the ALB |
+| alb\_dns\_name | DNS name of ALB |
+| alb\_name | The ARN suffix of the ALB |
+| alb\_zone\_id | The ID of the zone which ALB is provisioned |
+| default\_target\_group\_arn | The default target group ARN |
+| http\_listener\_arn | The ARN of the HTTP forwarding listener |
+| http\_redirect\_listener\_arn | The ARN of the HTTP to HTTPS redirect listener |
+| https\_listener\_arn | The ARN of the HTTPS listener |
+| listener\_arns | A list of all the listener ARNs |
+| security\_group\_id | The security group ID of the ALB |
+<!-- markdownlint-restore -->
